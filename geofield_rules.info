@@ -1,0 +1,8 @@
+name = Geofield Rules
+description = Provides Rules conditions and actions to compare geofields
+core = 7.x
+package = Rules
+version = 7.x-1.x-dev
+dependencies[] = rules
+dependencies[] = geofield
+files[] = geofield_rules.module
