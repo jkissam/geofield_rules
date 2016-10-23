@@ -53,7 +53,7 @@ function geofield_rules_entities_contain_point($geofield,$latitude,$longitude) {
 	$debug_message = '';
 	
 	// first, do a database query	
-	$query_string = 'SELECT entity_id, asText(GeomFromWKB('.$geom_field.')) AS geom FROM {field_data_field_district_polygon} f WHERE  (entity_type = :entity_type) AND (bundle = :bundle) AND (CONTAINS(GeomFromWKB('.$geom_field.'), POINT(:longitude, :latitude)))';
+	$query_string = 'SELECT entity_id, asText(GeomFromWKB('.$geom_field.')) AS geom FROM {field_data_'.$field_name.'} f WHERE  (entity_type = :entity_type) AND (bundle = :bundle) AND (CONTAINS(GeomFromWKB('.$geom_field.'), POINT(:longitude, :latitude)))';
 	$debug_message .= "query_string: $query_string\n";
 	$result = db_query($query_string, array(
 		':entity_type' => $entity_type,
